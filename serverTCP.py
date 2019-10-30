@@ -15,7 +15,7 @@ def handle_client(client_socket):
 	request = client_socket.recv(1024)
 	print '[*] Recebido %s' %request
 	print '\n-------------------------\n'
-	client_socket.send('\nMensagem destinada ao cliente: %s\n' %addr[0])
+	client_socket.send('\nMensagem destinada ao servidor: %s\n' %addr[0])
 	client_socket.send('\n ACK! \nRecebido pelo servidor!\n')
 	client_socket.close()
 
