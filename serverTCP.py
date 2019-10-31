@@ -19,8 +19,8 @@ def handle_client(client_socket):
 	client_socket.send('\n ACK! \nRecebido pelo servidor!\n')
 	client_socket.close()
 
-	while True:
-		client, addr = server.accept()
-		print'[*] Conexão aceita de: %s:%d' %(addr[0], addr[1])
-		client_handler = threading.Thread(target = handle_client, args = (client,))
-		client_handler.start()
+while True:
+	client, addr = server.accept()
+	print'[*] Conexão aceita de: %s:%d' %(addr[0], addr[1])
+	client_handler = threading.Thread(target = handle_client, args = (client,))
+	client_handler.start()
